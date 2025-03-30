@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface SubNavItem {
   label: string;
@@ -107,11 +108,15 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center py-4">
-          <NavLink href="/" className="text-2xl font-bold text-blue-600">
-            ISCIRF<span className="text-blue-800">2025</span>
+          <NavLink href="/" className="text-2xl font-bold text-blue-600 flex items-center gap-4">
+            <Image src="/hit_logo.png" alt="ISCIRF Logo" width={40} height={40} />
+            <span>
+
+            ISCIRF {" "}<span className="text-blue-800">2025</span>
+            </span>
           </NavLink>
           
-          <div className="hidden md:flex space-x-6">
+          <div className="hidden lg:flex space-x-6">
             {navItems.map((item, index) => (
               <div key={index} className="relative" ref={item.subItems ? dropdownRef : undefined}>
                 {item.subItems ? (
@@ -147,7 +152,7 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <NavLink 
               href="https://docs.google.com/forms/d/e/1FAIpQLSdrkjJwQY7j3HLy4MvT1wT9JklcQKbHUmiH9zTK8uX8Bxo26A/viewform" 
               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300"
@@ -158,7 +163,7 @@ const Navbar = () => {
 
           <button
             type="button"
-            className="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none"
+            className="lg:hidden text-gray-700 hover:text-blue-600 focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
@@ -170,7 +175,7 @@ const Navbar = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden flex flex-col space-y-4 py-4 pb-6">
+          <div className="lg:hidden flex flex-col space-y-4 py-4 pb-6">
             {navItems.map((item, index) => (
               <div key={index}>
                 {item.subItems ? (

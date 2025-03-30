@@ -42,17 +42,17 @@ const HeroSection = () => {
             </div>
 
             {/* Hero content */}
-            <div className="max-container mx-auto px-4 md:px-6 relative z-10 py-16 md:py-20 lg:py-28 text-center">
+            <div className="max-container mx-auto px-4 md:px-6 relative z-10 py-28 md:py-20 lg:py-28 text-center">
                 <div className="max-w-5xl mx-auto flex flex-col items-center">
                     <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-1 rounded-full mb-4">
-                        <p className="text-white text-sm  font-medium">
+                        <p className="text-white text-sm max-sm:text-xs  font-medium">
                             April 9-10, 2025 • S.N. Bose Convention Centre, HIT, India
                         </p>
                     </div>
 
                     <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight mb-6">
                         International Symposium on <br />
-                        <span className="text-blue-200">Computational Intelligence and Research Frontiers</span>
+                        <span className="">Computational Intelligence and Research Frontiers</span>
                     </h1>
 
                     <p className="text-base text-white/90 max-w-3xl mb-8 t">
@@ -100,7 +100,7 @@ const HeroSection = () => {
             </div>
 
             {/* Wave SVG */}
-            <div className="absolute -bottom-2 left-0 w-full overflow-hidden leading-none">
+            <div className="absolute -bottom-2 max-sm:-bottom-1 left-0 w-full overflow-hidden leading-none">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-12 md:h-16">
                     <path
                         d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C0,0,109,74.44,321.39,56.44Z"
