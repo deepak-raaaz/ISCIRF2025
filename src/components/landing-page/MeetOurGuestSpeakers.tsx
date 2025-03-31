@@ -65,19 +65,20 @@ const plenarySpeaker: PlenarySpeaker = {
 };
 
 const speakers: Speaker[] = [
+  
   {
     id: 1,
-    name: "Prof. (Dr.) José Luis Verdegay",
-    title: "Keynote Speaker",
-    institution: "Universidad de Granada, Spain",
-    image: "/speakers/2.png",
-  },
-  {
-    id: 2,
     name: "Prof. (Dr.) Sankar Kumar Roy",
     title: "Keynote Speaker",
     institution: "Vidyasagar University, Midnapur",
     image: "/speakers/3.jpeg",
+  },
+  {
+    id: 2,
+    name: "Prof. (Dr.) Santi Prasad Maiti",
+    title: "Keynote Speaker",
+    institution: "Department of Information Technology, IIEST, Shibpur, Howrah, Midnapur",
+    image: "/speakers/sp2.png",
   },
 ];
 

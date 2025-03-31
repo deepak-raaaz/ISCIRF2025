@@ -19,70 +19,70 @@ export const committeeMembers: CommitteeMember[] = [
     title: "Assistant Professor",
     department: "CSE(DS)",
     institution: "Haldia Institute of Technology",
-    image: "/committee/kunal-pradhan.jpg"
+    image: ""
   },
   {
     name: "Mr. Soumen Ghosh",
     title: "Assistant Professor",
     department: "CSE(DS)",
     institution: "Haldia Institute of Technology",
-    image: "/committee/soumen-ghosh.jpg"
+    image: ""
   },
   {
     name: "Ms. Minakshi Sarkar",
     title: "Assistant Professor",
     department: "CSE(DS)",
     institution: "Haldia Institute of Technology",
-    image: "/committee/minakshi-sarkar.jpg"
+    image: ""
   },
   {
     name: "Mr. Kalyan Maji",
     title: "Assistant Professor",
     department: "CSE(DS)",
     institution: "Haldia Institute of Technology",
-    image: "/committee/kalyan-maji.jpg"
+    image: ""
   },
   {
     name: "Mr. Sudip Mishra",
     title: "Assistant Professor",
     department: "CSE(DS)",
     institution: "Haldia Institute of Technology",
-    image: "/committee/sudip-mishra.jpg"
+    image: ""
   },
   {
     name: "Ms. Dipannita Basu",
     title: "Assistant Professor",
     department: "CSE(DS)",
     institution: "Haldia Institute of Technology",
-    image: "/committee/dipannita-basu.jpg"
+    image: ""
   },
   {
     name: "Ms. Aratrika Banerjee",
     title: "Assistant Professor",
     department: "CSE(DS)",
     institution: "Haldia Institute of Technology",
-    image: "/committee/aratrika-banerjee.jpg"
+    image: ""
   },
   {
     name: "Mrs. Jayashri Deb Sinha",
     title: "Assistant Professor",
     department: "CSE(DS)",
     institution: "Haldia Institute of Technology",
-    image: "/committee/jayashri-deb-sinha.jpg"
+    image: ""
   },
   {
     name: "Mr. Asis Kumar Bhunia",
     title: "Assistant Professor",
     department: "CSE(DS)",
     institution: "Haldia Institute of Technology",
-    image: "/committee/asis-kumar-bhunia.jpg"
+    image: ""
   },
   {
     name: "Mrs. Papri Ghosh",
     title: "Assistant Professor",
     department: "CSE(DS)",
     institution: "Haldia Institute of Technology",
-    image: "/committee/papri-ghosh.jpg"
+    image: ""
   }
 ];
 
