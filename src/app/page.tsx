@@ -9,6 +9,7 @@ import AboutDepartment from "@/components/landing-page/AboutDepartment";
 import Scope from "@/components/landing-page/Scope";
 import Themes from "@/components/landing-page/Themes";
 import Sponsor from "@/components/landing-page/Sponsor";
+import StudentCommittee from "@/components/landing-page/StudentCommittee";
 export default function Home() {
   return (
     <main className="">
@@ -20,6 +21,7 @@ export default function Home() {
       <MeetOurGuestSpeakers />
       <OrganizingCommittee />
       <AdvisoryCommittees />
+      <StudentCommittee />
       <Scope />
       <Themes />
       <Sponsor />

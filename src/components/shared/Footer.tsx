@@ -182,6 +182,9 @@ const Footer: React.FC = () => {
           <p className="text-blue-300 text-sm mb-2">
             © 2025 International Symposium on Computational Intelligence and Research Frontiers. All Rights Reserved.
           </p>
+          <p className="text-blue-300 text-sm mb-2">
+           Developed by <a href="https://d4deepak.com" target="_blank" className="text-blue-200 hover:text-white transition-colors duration-300">Deepak Kumar</a>
+          </p>
           
           
         </div>
