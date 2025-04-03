@@ -3,30 +3,73 @@
 import { useEffect, useState } from 'react';
 
 const HeroSection = () => {
-    const [timeLeft, setTimeLeft] = useState({ days: 9, hours: 10, minutes: 26, seconds: 19 });
+    const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+    const [eventStatus, setEventStatus] = useState<'upcoming' | 'ongoing' | 'completed'>('upcoming');
 
     useEffect(() => {
-        const countdown = setInterval(() => {
-            setTimeLeft((prevTime) => {
-                let { days, hours, minutes, seconds } = prevTime;
-                if (seconds > 0) seconds--;
-                else {
-                    seconds = 59;
-                    if (minutes > 0) minutes--;
-                    else {
-                        minutes = 59;
-                        if (hours > 0) hours--;
-                        else {
-                            hours = 23;
-                            if (days > 0) days--;
-                        }
-                    }
+        const eventDate = new Date('2025-04-09T00:00:00');
+        
+        const updateCountdown = () => {
+            const now = new Date();
+            const difference = eventDate.getTime() - now.getTime();
+
+            if (difference <= 0) {
+                if (now.toDateString() === eventDate.toDateString()) {
+                    setEventStatus('ongoing');
+                } else {
+                    setEventStatus('completed');
                 }
-                return { days, hours, minutes, seconds };
-            });
-        }, 1000);
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            setTimeLeft({ days, hours, minutes, seconds });
+        };
+
+        updateCountdown();
+        const countdown = setInterval(updateCountdown, 1000);
         return () => clearInterval(countdown);
     }, []);
+
+    const renderCountdown = () => {
+        if (eventStatus === 'completed') {
+            return (
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4 max-w-2xl w-full">
+                    <h3 className="text-white text-lg font-medium mb-4">Event Successfully Completed</h3>
+                    <p className="text-white/80">Thank you for being part of ISCIRF 2025</p>
+                </div>
+            );
+        }
+
+        if (eventStatus === 'ongoing') {
+            return (
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4 max-w-2xl w-full">
+                    <h3 className="text-white text-lg font-medium mb-4">Event is Live Now!</h3>
+                    <p className="text-white/80">Join us at S.N. Bose Convention Centre</p>
+                </div>
+            );
+        }
+
+        return (
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4 max-w-2xl w-full">
+                <h3 className="text-white text-lg font-medium mb-4">Event Begins In</h3>
+                <div className="flex justify-center gap-4">
+                    {Object.entries(timeLeft).map(([unit, value]) => (
+                        <div key={unit} className="flex flex-col items-center">
+                            <div className="bg-white/20 backdrop-blur-sm w-16 h-16 md:w-20 md:h-20 rounded-lg flex items-center justify-center text-white text-2xl md:text-3xl font-bold">
+                                {String(value).padStart(2, '0')}
+                            </div>
+                            <span className="text-white/80 text-sm mt-2 capitalize">{unit}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+    };
 
     return (
         <section id="hero" className="relative pt-10 lg:pt-8 overflow-hidden">
@@ -45,7 +88,7 @@ const HeroSection = () => {
             <div className="max-container mx-auto px-4 md:px-6 relative z-10 py-28 md:py-20 lg:py-28 text-center">
                 <div className="max-w-5xl mx-auto flex flex-col items-center">
                     <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-1 rounded-full mb-4">
-                        <p className="text-white text-sm max-sm:text-xs  font-medium">
+                        <p className="text-white text-sm max-sm:text-xs font-medium">
                             April 9-10, 2025 • S.N. Bose Convention Centre, HIT, India
                         </p>
                     </div>
@@ -55,18 +98,16 @@ const HeroSection = () => {
                         <span className="">Computational Intelligence and Research Frontiers</span>
                     </h1>
 
-                    <p className="text-base text-white/90 max-w-3xl mb-8 t">
-                    <span className="text-yellow-300 font-bold">
-
-                        Organized by {" "}
-                    </span>
+                    <p className="text-base text-white/90 max-w-3xl mb-8">
+                        <span className="text-yellow-300 font-bold">
+                            Organized by{" "}
+                        </span>
                         Department of COMPUTER SCIENCE AND
                         ENGINEERING(DATA SCIENCE), Haldia
                         Institute of Technology, Haldia, W.B., India
                         <span className="text-yellow-300 font-bold">
                             {" "}
-                        in association with {" "}
-
+                            in association with{" "}
                         </span>
                         Internal Quality Assurance Cell,
                         Haldia Institute of Technology, Haldia,
@@ -80,22 +121,9 @@ const HeroSection = () => {
                         >
                             Register Now
                         </a>
-                        
                     </div>
 
-                    <div className="bg-white/10 backdrop-blur-sm rounded-xl px-6 py-4 max-w-2xl w-full">
-                        <h3 className="text-white text-lg font-medium mb-4">Event Begins In</h3>
-                        <div className="flex justify-center gap-4">
-                            {Object.entries(timeLeft).map(([unit, value]) => (
-                                <div key={unit} className="flex flex-col items-center">
-                                    <div className="bg-white/20 backdrop-blur-sm w-16 h-16 md:w-20 md:h-20 rounded-lg flex items-center justify-center text-white text-2xl md:text-3xl font-bold">
-                                        {String(value).padStart(2, '0')}
-                                    </div>
-                                    <span className="text-white/80 text-sm mt-2 capitalize">{unit}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+                    {renderCountdown()}
                 </div>
             </div>
 

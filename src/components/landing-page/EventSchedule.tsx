@@ -57,7 +57,8 @@ const ScheduleSection: React.FC = () => {
 
                   <div className="mt-6">
                     <a
-                      href="#registration"
+                      target="_blank"
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSdrkjJwQY7j3HLy4MvT1wT9JklcQKbHUmiH9zTK8uX8Bxo26A/viewform"
                       className="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300"
                     >
                       Register Now

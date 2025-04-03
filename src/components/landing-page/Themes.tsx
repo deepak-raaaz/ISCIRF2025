@@ -134,9 +134,9 @@ const Themes: React.FC = () => {
           </h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
           <p className="max-w-3xl mx-auto text-gray-600 text-lg">
-            Discover the key research areas and technological themes that will be covered at ISCIRF 2025.
-          </p>
-        </div>
+          Discover the key research areas and technological themes that will be covered at ISCIRF 2025.
+        </p>
+      </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Left side image */}
@@ -150,30 +150,30 @@ const Themes: React.FC = () => {
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-600/90 via-blue-600/50 to-transparent"></div>
-            </div>
-            
+          </div>
+          
             <div className="absolute top-4 left-4 right-4 p-6 bg-white rounded-xl shadow-lg">
               <h3 className="text-xl font-bold text-blue-600 mb-3">Research Areas</h3>
               <p className="text-gray-600 mb-4">
-                ISCIRF 2025 will explore groundbreaking computational approaches addressing critical challenges across industries.
-              </p>
+              ISCIRF 2025 will explore groundbreaking computational approaches addressing critical challenges across industries.
+            </p>
               <div className="flex items-center justify-between text-sm text-blue-600">
-                <span>8 core themes</span>
-                <span>30+ sub-topics</span>
-                <span>100+ research areas</span>
-              </div>
+              <span>8 core themes</span>
+              <span>30+ sub-topics</span>
+              <span>100+ research areas</span>
             </div>
           </div>
+        </div>
 
           {/* Right side themes */}
-          <div>
+        <div>
             <div className="space-y-6">
               {mainThemes.map((theme, index) => (
                 <ThemeItem key={index} {...theme} />
               ))}
-            </div>
           </div>
         </div>
+      </div>
 
         {/* Additional themes in a grid layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
@@ -207,8 +207,8 @@ const Themes: React.FC = () => {
             </div>
           </div>
         </div> */}
-      </div>
-    </section>
+    </div>
+  </section>
   );
 };
 

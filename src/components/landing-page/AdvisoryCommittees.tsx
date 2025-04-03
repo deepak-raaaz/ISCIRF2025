@@ -21,7 +21,7 @@ const ProfileImage: React.FC<{ src: string; alt: string; size?: 'sm' | 'md' }> =
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         priority={size === 'md'}
       />
-    </div>
+      </div>
   );
 };
 
@@ -36,7 +36,7 @@ const AdvisorCard: React.FC<{ member: AdvisoryMember }> = ({ member }) => (
             <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
-          </div>
+        </div>
         )}
       </div>
       <div className="ml-6 flex-1">
@@ -56,13 +56,13 @@ const AdvisorCard: React.FC<{ member: AdvisoryMember }> = ({ member }) => (
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
                 <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-              </svg>
+                </svg>
             </a>
           </div>
         )} */}
-      </div>
-    </div>
-  </div>
+              </div>
+            </div>
+          </div>
 );
 
 const TabButton: React.FC<{
@@ -100,8 +100,8 @@ const AdvisoryCommittees: React.FC = () => {
           <p className="text-gray-600 max-w-2xl mx-auto">
             Our distinguished academic advisors guiding the symposium&apos;s vision and direction.
           </p>
-        </div>
-        
+          </div>
+          
         {/* Tab Navigation */}
         <div className="mb-10">
           <div className="flex flex-wrap justify-center space-x-2 md:space-x-6" role="tablist">
@@ -119,8 +119,8 @@ const AdvisoryCommittees: React.FC = () => {
             </TabButton>
           </div>
           <hr className="border-t-2 border-blue-600" />
-        </div>
-        
+          </div>
+          
         {/* National Advisory Committee Content */}
         <div 
           className={`relative transition-opacity duration-300 ${
@@ -133,9 +133,9 @@ const AdvisoryCommittees: React.FC = () => {
             {nationalAdvisors.map((member, index) => (
               <AdvisorCard key={`national-${index}`} member={member} />
             ))}
-          </div>
         </div>
-        
+      </div>
+      
         {/* International Advisory Committee Content */}
         <div 
           className={`relative transition-opacity duration-300 ${
